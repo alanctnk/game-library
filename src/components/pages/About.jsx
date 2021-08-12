@@ -14,7 +14,7 @@ export default function about() {
 
                     <header className="h3">Hello, I'm Alan Tanaka</header>
                     <p className="fs-5">
-                        First, sorry my poor English. I'm a tech lover and aspiring Web Developer! I appreciate content focused on logical reasoning, I realized that programming represents this idea, so I always intend to improve myself to elucidate problems and help people. I am currently studying Full Stack Web Development at Trybe. My favorite languages ​​are JavaScript and Python.
+                        First, sorry my poor English. I'm a tech lover and aspiring Web Developer! I like content focused on logical reasoning, I realized that programming represents this idea, so I always intend to improve myself to elucidate problems and help people. I am currently studying Full Stack Web Development at Trybe. My favorite languages ​​are JavaScript and Python.
                     </p>
                 </div>
                 <div className="container">
