@@ -1,4 +1,4 @@
-# TodoApp
+# Game Library
 
 ## Tecnologias utilizadas:
 
@@ -18,4 +18,4 @@
 ---
 
 ## Preview:
-[YouTube](https://www.youtube.com/watch?v=Pw_Qvjru168)
+[Aqui](https://alanctnk.github.io/game-library)
