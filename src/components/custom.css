@@ -1,0 +1,15 @@
+.pageHeader{
+  background-color: #dddddd;
+  border-radius: 20px;
+}
+
+.imagesGroup {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.imagesGroup img {
+  width: 200px;
+}
+
