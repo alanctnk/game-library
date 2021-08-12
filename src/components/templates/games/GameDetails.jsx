@@ -52,6 +52,12 @@ export default function GameDetails(props) {
                         </div>
                       </div>
                       <div className="container mt-2 border">
+                        <header className="fs-4 text-muted">Description</header>
+                        <p>
+                          {game.description_raw}
+                        </p>
+                      </div>
+                      <div className="container mt-2 border">
                         <header className="fs-4 text-muted">Genres</header>
                         <div className="list-group list-group-horizontal my-2">
                           {game.genres.map((genre) => {

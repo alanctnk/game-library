@@ -14,7 +14,7 @@ export default function Games() {
     const [gamesList, setGamesList] = React.useState([])
 
     React.useEffect(() => {
-        axiosInstance.get(`/games?${api_key}&metacritic=90,95&ordering=-metacritic`)
+        axiosInstance.get(`/games?${api_key}&metacritic=95,100&ordering=created`)
           .then((resp) => setGamesList([...resp.data.results]))
           .then(() => setIsLoading(false))
     }, [])
