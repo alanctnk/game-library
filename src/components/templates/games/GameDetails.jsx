@@ -15,7 +15,7 @@ export default function GameDetails(props) {
 
     React.useEffect(() => {
         axiosInstance.get(`/games/${id}?${api_key}`)
-            .then((resp) => setGame(resp.data)).then(() => console.log(game))
+            .then((resp) => setGame(resp.data))
             .then(() => setIsLoading(false))
     }, [])
 
@@ -63,7 +63,7 @@ export default function GameDetails(props) {
                       </div>
                       <div className="container mt-2 border">
                         <header className="fs-4 text-muted">Consoles</header>
-                        <div className="list-group list-group-horizontal my-2">
+                        <div className="list-group list-group-horizontal overflow-scroll my-2">
 
                           {game.platforms.map(({platform}) => {
                             return (
@@ -75,7 +75,7 @@ export default function GameDetails(props) {
                       </div>
                       <div className="container mt-2 mb-4 border">
                         <header className="fs-4 text-muted">Developers</header>
-                        <div className="list-group list-group-horizontal my-2">
+                        <div className="list-group list-group-horizontal overflow-scroll my-2">
 
                           {game.developers.map((dev) => {
                             return (
