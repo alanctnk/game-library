@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function GameCard(props) {
   const { game } = props
     return (
-        <div className="card g-col-xs-12 g-col-md-6 g-col-2 me-auto mb-4" style={{width: '18rem'}}>
+        <div className="card shadow-sm g-col-xs-12 g-col-md-6 g-col-2 me-auto mb-4" style={{width: '18rem'}}>
             <img src={game.background_image} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title fw-bold">{game.name}</h5>
