@@ -7,6 +7,7 @@ import Loading from '../loading/Loading'
 
 import { api_key } from '../../../services/axios'
 import axiosInstance from '../../../services/axios'
+import Form from '../Form'
 
 export default function Games() {
 
@@ -25,8 +26,8 @@ export default function Games() {
             
             <Content>
               {isLoading ? <Loading/> : (
-
-                  <div className="container">
+                <div className="container">
+                    <Form/>
                     <div className="grid row">
 
                       {gamesList.map((game) => {

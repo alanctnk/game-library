@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 
 import Navbar from '../Navbar'
@@ -12,16 +13,16 @@ export default function GameDetails(props) {
     const { match: { params: { id } } } = props
     const [isLoading, setIsLoading] = React.useState(true)
     const [game, setGame] = React.useState(null)
-
+    
     React.useEffect(() => {
-        axiosInstance.get(`/games/${id}?${api_key}`)
-            .then((resp) => setGame(resp.data))
-            .then(() => setIsLoading(false))
+      axiosInstance.get(`/games/${id}?${api_key}`)
+      .then((resp) => setGame(resp.data))
+      .then(() => setIsLoading(false))
     }, [])
-
+    
     return (
-        
-        <div>
+      
+      <div>
             <Navbar/>
             <PageHeader title="Games" subtitle="Game details"/>
             <Content>
@@ -30,7 +31,7 @@ export default function GameDetails(props) {
                     <header className="h4 d-flex justify-content-center fw-bold bg-light rounded-pill p-1">
                       {game.name}
                     </header>
-                    <section className="details">
+                    <section>
                       <div className="container d-flex">
                         <div className="container">
                           <header className="fs-4 text-muted">Rating: <span className="text-dark">{game.rating}</span></header>
@@ -42,10 +43,10 @@ export default function GameDetails(props) {
                       <div className="container border">
                         <div className="imagesGroup m-2">
 
-                          <a href={game.background_image} target="_blank">
+                          <a href={game.background_image} target="_blank" rel="noopener noreferrer">
                             <img src={game.background_image} className="img-thumbnail" alt="..."/>
                           </a>
-                          <a href={game.background_image_additional} target="_blank" >
+                          <a href={game.background_image_additional} target="_blank" rel="noopener noreferrer">
                             <img src={game.background_image_additional} className="img-thumbnail" alt={`${game.name_original}`}/>
 
                           </a>
@@ -57,42 +58,57 @@ export default function GameDetails(props) {
                           {game.description_raw}
                         </p>
                       </div>
+                    </section>
+                    <section className="d-flex mb-3">
+
                       <div className="container mt-2 border">
                         <header className="fs-4 text-muted">Genres</header>
-                        <div className="list-group list-group-horizontal my-2">
+                        <div className="list-group  my-2">
                           {game.genres.map((genre) => {
                             return (
-                              <a key={genre.id} href="#" className="list-group-item list-group-item-action list-group-item-info fw-bolder">{genre.name}</a>
+                              <button key={genre.id} className="list-group-item list-group-item-action list-group-item-info fw-bolder">{genre.name}</button>
                             )
                           })}
                         </div>
                       </div>
                       <div className="container mt-2 border">
-                        <header className="fs-4 text-muted">Consoles</header>
-                        <div className="list-group list-group-horizontal overflow-hidden my-2">
+                        <header className="fs-4 text-muted">Platforms</header>
+                        <div className="list-group  overflow-hidden my-2">
 
                           {game.platforms.map(({platform}) => {
                             return (
                               
-                              <a key={platform.id} href="#" className="list-group-item list-group-item-action list-group-item-info fw-bolder">{platform.name}</a>
+                              <button key={platform.id} className="list-group-item list-group-item-action list-group-item-info fw-bolder">{platform.name}</button>
                             )
                           })}
                         </div>
                       </div>
-                      <div className="container mt-2 mb-4 border">
+                      <div className="container mt-2 border">
+                        <header className="fs-4 text-muted">Publishers</header>
+                        <div className="list-group  overflow-hidden my-2">
+
+                          {game.publishers.map((dev) => {
+                            return (
+                              
+                              <button key={dev.id} className="list-group-item list-group-item-action list-group-item-info fw-bolder">{dev.name}</button>
+                            )
+                          })}
+                        </div>
+                      </div>
+                      <div className="container mt-2 border">
                         <header className="fs-4 text-muted">Developers</header>
-                        <div className="list-group list-group-horizontal overflow-hidden my-2">
+                        <div className="list-group  overflow-hidden my-2">
 
                           {game.developers.map((dev) => {
                             return (
                               
-                              <a key={dev.id} href="#" className="list-group-item list-group-item-action list-group-item-info fw-bolder">{dev.name}</a>
+                              <button key={dev.id} className="list-group-item list-group-item-action list-group-item-info fw-bolder">{dev.name}</button>
                             )
                           })}
                         </div>
                       </div>
-                      
                     </section>
+                      
                                         
                   </div>
                 )}
